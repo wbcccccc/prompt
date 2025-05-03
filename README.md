@@ -105,6 +105,18 @@
 - 更新组件最佳实践和使用示例
 - 修复文档内容的错误和不一致
 
+# 如何启动
+
+不要直接点击index.html访问！Do not directly click on index.html to access!
+
+不要直接点击index.html访问！Do not directly click on index.html to access!
+
+不要直接点击index.html访问！Do not directly click on index.html to access!
+
+重要的事情说6遍
+
+使用终端用node启用start-docs.js文件就会在本地启用3000端口
+
 ## 联系方式
 
 如有任何问题或建议，请联系前端团队负责人。 
