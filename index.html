@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端组件需求与实现文档</title>
+    <script src="markdown-viewer.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        h1 {
+            border-bottom: 2px solid #eaecef;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        
+        .card-description {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #e1f5fe;
+            color: #0288d1;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #388E3C;
+        }
+        
+        .btn-secondary {
+            background-color: #2196F3;
+            margin-left: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #1565C0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #eaecef;
+            padding-top: 20px;
+        }
+        
+        .tag-container {
+            margin-bottom: 15px;
+        }
+        
+        .file-info {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        #content-container {
+            display: none;
+        }
+        
+        #index-container {
+            display: block;
+        }
+        
+        .table-of-contents {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            border-left: 3px solid #4CAF50;
+        }
+        
+        .table-of-contents h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .table-of-contents ul {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="index-container">
+        <h1>前端组件需求与实现文档</h1>
+        
+        <div class="card">
+            <h2>项目概览</h2>
+            <p>本项目包含三个主要的文档文件，提供了详细的前端组件需求规范和实现方案。这些文档共同构成了一个完整的前端组件库设计和实现参考，可以指导前端团队进行规范化的组件开发。</p>
+            <a href="README.md" class="btn" onclick="viewMd('README.md'); return false;">查看完整说明</a>
+        </div>
+        
+        <div class="card">
+            <h2>业务场景和页面需求</h2>
+            <p class="card-description">详细列出了各种业务场景下的页面需求，包括各类平台的UI组件和逻辑需求、校验规则和错误提示消息。</p>
+            <div class="tag-container">
+                <span class="tag">电商平台</span>
+                <span class="tag">Agent平台</span>
+                <span class="tag">视频平台</span>
+                <span class="tag">教育平台</span>
+                <span class="tag">社交应用</span>
+                <span class="tag">医疗应用</span>
+                <span class="tag">更多场景...</span>
+            </div>
+            <a href="propmt.md" class="btn" onclick="viewMd('propmt.md'); return false;">查看文档</a>
+            <div class="file-info">文件名: propmt.md (655KB, 551 行)</div>
+        </div>
+        
+        <div class="card">
+            <h2>组件与模块实现总结</h2>
+            <p class="card-description">提供了组件和模块的实现总结，包括基础组件、业务组件、功能模块和系统模块的概要描述。</p>
+            <div class="tag-container">
+                <span class="tag">基础组件</span>
+                <span class="tag">业务组件</span>
+                <span class="tag">功能模块</span>
+                <span class="tag">系统模块</span>
+            </div>
+            <a href="component_summary.md" class="btn" onclick="viewMd('component_summary.md'); return false;">查看文档</a>
+            <div class="file-info">文件名: component_summary.md (61KB, 2176 行)</div>
+        </div>
+        
+        <div class="card">
+            <h2>组件与功能实现文档</h2>
+            <p class="card-description">提供了组件和功能的详细实现代码和说明，包括基础组件的代码实现、功能细节和使用方法。</p>
+            <div class="tag-container">
+                <span class="tag">代码实现</span>
+                <span class="tag">功能细节</span>
+                <span class="tag">使用示例</span>
+                <span class="tag">实现方法</span>
+            </div>
+            <a href="components_implementation.md" class="btn" onclick="viewMd('components_implementation.md'); return false;">查看文档</a>
+            <div class="file-info">文件名: components_implementation.md (122KB, 4563 行)</div>
+        </div>
+        
+        <footer>
+            <p>前端组件需求与实现文档 &copy; 2023</p>
+        </footer>
+    </div>
+    
+    <div id="content-container"></div>
+    
+    <script>
+        // 检查是否有URL参数
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fileName = urlParams.get('file');
+            
+            if (fileName) {
+                // 隐藏首页内容
+                document.getElementById('index-container').style.display = 'none';
+                
+                // 显示内容容器
+                const contentContainer = document.getElementById('content-container');
+                contentContainer.style.display = 'block';
+                
+                // 添加返回按钮
+                const backButton = document.createElement('a');
+                backButton.href = 'index.html';
+                backButton.className = 'back-button';
+                backButton.textContent = '← 返回首页';
+                contentContainer.appendChild(backButton);
+                
+                // 创建内容元素
+                const contentElement = document.createElement('div');
+                contentElement.className = 'markdown-content';
+                contentElement.innerHTML = '<div class="loading">加载中...</div>';
+                contentContainer.appendChild(contentElement);
+                
+                // 加载并显示Markdown内容
+                fetch(fileName)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`文件加载失败: ${response.status} ${response.statusText}`);
+                        }
+                        return response.text();
+                    })
+                    .then(markdownText => {
+                        // 转换Markdown为HTML (使用markdown-viewer.js中的函数)
+                        contentElement.innerHTML = markdownToHtml(markdownText);
+                        
+                        // 添加文件标题
+                        const titleElement = document.createElement('div');
+                        titleElement.className = 'file-title';
+                        titleElement.innerHTML = `<h1>${fileName}</h1>`;
+                        contentElement.insertBefore(titleElement, contentElement.firstChild);
+                        
+                        // 更新页面标题
+                        document.title = `${fileName} - 前端组件需求与实现文档`;
+                        
+                        // 如果内容较长，添加目录
+                        if (markdownText.length > 1000) {
+                            addTableOfContents(contentElement);
+                        }
+                    })
+                    .catch(error => {
+                        contentElement.innerHTML = `<div class="error-message">
+                            <h3>错误</h3>
+                            <p>${error.message}</p>
+                            <p>请检查文件是否存在或刷新页面重试。</p>
+                        </div>`;
+                    });
+            }
+        });
+        
+        // 查看Markdown文件的函数
+        function viewMd(fileName) {
+            window.location.href = `index.html?file=${fileName}`;
+        }
+    </script>
+</body>
+</html> 
